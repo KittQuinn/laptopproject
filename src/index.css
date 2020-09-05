@@ -2,7 +2,12 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
+  font: calc(100% * 0.625) / 1.15 HelveticaNeue, Helvetica, sans-serif;
+}
+
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -11,11 +16,11 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.8rem;
+  line-height: 1.875;
+  color: #252525;
 }
 
 #root {
@@ -25,4 +30,136 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  background-color: #252525d2;
+  color: #fff;
+  padding: 2rem;
+}
+
+header>h1,
+main {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+legend>h3 {
+  margin: 0;
+}
+
+main {
+  width: 95%;
+  max-width: 120rem;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.mainForm {
+  flex: 4;
+}
+
+.feature {
+  padding: 0.8rem;
+  padding-top: 0.4rem;
+  border: 0;
+}
+
+.feature+.feature {
+  margin-top: 0.8rem;
+}
+
+.featureName {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.featureItem+.featureItem {
+  margin-top: 0.8rem;
+}
+
+/* Hide radios from sighted users,
+while keeping them available to the keyboard */
+.featureOption {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.featureLabel {
+  display: block;
+  padding: 0.8rem;
+  border: 0.1rem solid #d6d6d6;
+  border-radius: 0.4rem;
+}
+
+.featureLabel:hover {
+  border-color: #888;
+}
+
+.featureOption:checked+.featureLabel {
+  border: 0.2rem solid #0070c9;
+}
+
+.featureOption:focus+.featureLabel {
+  box-shadow: 0 0 0 0.1rem #fff, 0 0 0 0.3rem #83c0fd;
+}
+
+.featureOption:not(:checked)+.featureLabel {
+  cursor: pointer;
+}
+
+.mainSummary {
+  flex: 3;
+  margin-left: 0.2rem;
+}
+
+.summaryOption {
+  display: grid;
+  grid-template-areas:
+    'key cost'
+    'value value';
+  padding: 0.2rem;
+  margin-top: 1rem;
+}
+
+.summaryOptionLabel {
+  font-size: 2.2rem;
+  font-weight: bold;
+  grid-area: key;
+}
+
+.summaryOptionValue {
+  grid-area: value;
+}
+
+.summaryOptionCost {
+  grid-area: cost;
+  text-align: right;
+}
+
+.summaryTotal {
+  font-size: 2.2rem;
+  line-height: 2.4;
+  display: flex;
+  margin-top: 1.5rem;
+  border-top: solid 1px #252525;
+}
+
+.summaryTotalLabel {
+  font-weight: bold;
+  flex: 2;
+}
+
+.summaryTotalValue {
+  text-decoration: underline;
 }
