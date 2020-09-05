@@ -61,6 +61,11 @@ main {
   flex: 4;
 }
 
+.mainSummary {
+  flex: 3;
+  margin-left: 0.2rem;
+}
+
 .feature {
   padding: 0.8rem;
   padding-top: 0.4rem;
@@ -116,11 +121,6 @@ while keeping them available to the keyboard */
 
 .featureOption:not(:checked)+.featureLabel {
   cursor: pointer;
-}
-
-.mainSummary {
-  flex: 3;
-  margin-left: 0.2rem;
 }
 
 .summaryOption {
